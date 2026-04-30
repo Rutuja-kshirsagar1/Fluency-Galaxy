@@ -328,8 +328,8 @@ async function init() {
     
     // Load both CSV files
     await Promise.all([
-        loadCSV('impromptu_speaking_topics_500.csv', 'general'),
-        loadCSV('speaking_topics.csv', 'professional')
+        loadCSV('impromptu_speaking_general.csv', 'general'),
+        loadCSV('speaking_topics_professional.csv', 'professional')
     ]);
     
     // Verify topics loaded
