@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at 20% 30%, #0a0f2a, #03050b);
+    font-family: 'Segoe UI', 'Orbitron', 'Poppins', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animated Stars */
+.star {
+    position: fixed;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 3s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5);}
+    50% { opacity: 1; transform: scale(1);}
+}
+
+/* Shooting Stars */
+.shooting-star {
+    position: fixed;
+    top: -10%;
+    width: 2px;
+    height: 2px;
+    background: linear-gradient(white, cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 8px cyan;
+    animation: shoot 8s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes shoot {
+    0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateX(400px) translateY(400px) rotate(45deg); opacity: 0; }
+}
+
+/* Main Galaxy Card */
+.galaxy-card {
+    background: rgba(12, 20, 35, 0.6);
+    backdrop-filter: blur(16px);
+    border-radius: 2.5rem;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 255, 255, 0.2);
+    width: 100%;
+    max-width: 850px;
+    padding: 2rem;
+    transition: all 0.3s;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 2.2rem;
+    background: linear-gradient(135deg, #aaffff, #c084fc, #ff69b4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.sub {
+    text-align: center;
+    color: #7bc5ff;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    margin-top: 0.3rem;
+    margin-bottom: 2rem;
+}
+
+/* Topic Container */
+.topic-container {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 1.5rem;
+    padding: 1.8rem;
+    margin: 1.5rem 0;
+    border: 1px solid #3b4b6e;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+}
+
+.topic-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #7bc5ff;
+    margin-bottom: 12px;
+}
+
+.topic-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #f0f3ff;
+    text-shadow: 0 0 3px cyan;
+    word-break: break-word;
+}
+
+/* Action Row */
+.action-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.category-select {
+    background: #0f172ac9;
+    border: 1px solid #2dd4bf;
+    color: #bbf0ff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    font-family: monospace;
+}
+
+.galaxy-btn {
+    background: rgba(0, 20, 40, 0.7);
+    border: 1px solid #1effbc;
+    color: #b5ffff;
+    padding: 0.6rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    backdrop-filter: blur(4px);
+    font-size: 0.9rem;
+}
+
+.galaxy-btn:hover {
+    background: #1effbc20;
+    box-shadow: 0 0 12px cyan;
+    transform: scale(0.97);
+}
+
+/* Timer Panel */
+.timer-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: space-between;
+    margin: 1rem 0 1.5rem;
+    color: #adccff;
+}
+
+.time-select {
+    background: #030b17aa;
+    border: 1px solid #5f9eff;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    color: cyan;
+    font-weight: bold;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+/* Buttons */
+.button-cluster {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.prime-btn {
+    background: radial-gradient(circle at 30% 10%, #0a2351, #010a1a);
+    border: 1px solid #0ff;
+    padding: 10px 22px;
+    border-radius: 40px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: cyan;
+    cursor: pointer;
+    transition: 0.1s linear;
+    box-shadow: 0 0 5px cyan;
+    font-family: monospace;
+}
+
+.prime-btn:active {
+    transform: scale(0.96);
+}
+
+.stop-btn {
+    border-color: #ff66aa;
+    color: #ffa6d5;
+    box-shadow: 0 0 6px #ff69b4;
+}
+
+/* Timer Visual */
+.time-visual {
+    margin: 1rem 0;
+}
+
+.time-bar-bg {
+    background: #111c2e;
+    border-radius: 30px;
+    height: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 4px #00000055;
+}
+
+.time-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #0ff, #f0f, #ffaa44);
+    border-radius: 30px;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 6px cyan;
+}
+
+.digital-clock {
+    text-align: center;
+    font-family: 'Orbitron', monospace;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #aaffdd;
+    text-shadow: 0 0 10px #0ff;
+    margin-top: 10px;
+}
+
+.phase-label {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    color: #89b9ff;
+}
+
+/* Stats */
+.session-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.8rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #2f4f7f;
+    color: #9cc9ff;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.key-hint {
+    font-size: 0.7rem;
+    background: #00000055;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.sound-toggle {
+    cursor: pointer;
+    background: none;
+    border: 1px solid cyan;
+    border-radius: 20px;
+    padding: 4px 12px;
+    color: white;
+    font-size: 0.7rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .galaxy-card {
+        padding: 1.2rem;
+    }
+    .topic-text {
+        font-size: 1.2rem;
+    }
+    .digital-clock {
+        font-size: 1.8rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Fluency Galaxy | Impromptu Speaking Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Animated Stars Container -->
+<div id="starsContainer"></div>
+<div id="shootingStarsContainer"></div>
+
+<!-- Main App Card -->
+<div class="galaxy-card">
+    <h1>🌌 Fluency Galaxy</h1>
+    <div class="sub">| impromptu lab  |</div>
+
+    <!-- Topic Display -->
+    <div class="topic-container">
+        <div class="topic-label">
+            <span>🌀 ACTIVE TOPIC</span>
+        </div>
+        <div class="topic-text" id="topicText">Loading stellar topics...</div>
+    </div>
+
+    <!-- Controls Row -->
+    <div class="action-row">
+        <select id="categorySelect" class="category-select">
+            <option value="general">📘 GENERAL</option>
+            <option value="professional">💼 PROFESSIONAL</option>
+        </select>
+        <button class="galaxy-btn" id="newTopicBtn">🎲 NOVA TOPIC</button>
+    </div>
+
+    <!-- Timer Settings -->
+    <div class="timer-panel">
+        <label>⏳ PREP TIME:
+            <select id="prepSelect" class="time-select">
+                <option value="15">15 sec</option>
+                <option value="30" selected>30 sec</option>
+                <option value="45">45 sec</option>
+                <option value="60">60 sec</option>
+            </select>
+        </label>
+        <label>🎤 SPEAK TIME:
+            <select id="speakSelect" class="time-select">
+                <option value="60">1 min</option>
+                <option value="120" selected>2 min</option>
+                <option value="180">3 min</option>
+                <option value="300">5 min</option>
+                <option value="600">10 min</option>
+            </select>
+        </label>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="button-cluster">
+        <button class="prime-btn" id="startBtn">▶ INITIATE</button>
+        <button class="prime-btn" id="pauseBtn">⏸ ORBIT PAUSE</button>
+        <button class="prime-btn stop-btn" id="resetBtn">⟳ ABORT</button>
+    </div>
+
+    <!-- Visual Timer -->
+    <div class="time-visual">
+        <div class="time-bar-bg">
+            <div class="time-fill" id="timeFill"></div>
+        </div>
+        <div class="digital-clock" id="timerDisplay">00:00</div>
+        <div class="phase-label" id="phaseLabel">✨ standby mode</div>
+    </div>
+
+    <!-- Stats -->
+    <div class="session-stats">
+        <div>🌠 SESSION: <span id="speechCount">0</span> speeches</div>
+        <div class="key-hint">⌨️ [N] new topic | [Space] start/pause</div>
+        <div id="soundToggleBtn" class="sound-toggle">🔊 SOUND ON</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
